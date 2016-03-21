@@ -23,7 +23,7 @@
     },
     "sku": {
       "type": "string",
-      "defaultValue": "Standard",
+      "defaultValue": "Basic",
       "allowedValues": [
         "Free",
         "Basic",
