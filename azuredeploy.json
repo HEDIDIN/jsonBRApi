@@ -41,7 +41,7 @@
       ]
     },
     "gatewayToApiAppSecret": {
-      "defaultValue": "anNzY3JpcHRpbmdhcGk=",
+      "defaultValue": "aoNzY3JpcHRpbmdhcGk=",
       "type": "securestring"
     }
   },
@@ -52,7 +52,7 @@
   "resources": [
     {
       "type": "Microsoft.Web/serverfarms",
-      "apiVersion": "2015-04-01",
+      "apiVersion": "2015-08-01",
       "name": "[parameters('svcPlanName')]",
       "location": "[resourceGroup().location]",
       "tags": {
@@ -67,7 +67,7 @@
     },
     {
       "type": "Microsoft.Web/sites",
-      "apiVersion": "2015-04-01",
+      "apiVersion": "2015-08-01",
       "name": "[parameters('gatewayName')]",
       "location": "[resourceGroup().location]",
       "kind": "gateway",
@@ -77,7 +77,7 @@
       "resources": [
         {
           "type": "providers/links",
-          "apiVersion": "2015-01-01",
+          "apiVersion": "2015-08-01",
           "name": "Microsoft.Resources/gateway",
           "dependsOn": [
             "[resourceId('Microsoft.Web/sites',parameters('gatewayName'))]"
@@ -123,7 +123,7 @@
       "resources": [
         {
           "type": "providers/links",
-          "apiVersion": "2015-01-01",
+          "apiVersion": "2015-03-01-preview",
           "name": "Microsoft.Resources/gatewaySite",
           "dependsOn": [
             "[resourceId('Microsoft.AppService/gateways',parameters('gatewayName'))]"
@@ -157,7 +157,7 @@
     },
     {
       "type": "Microsoft.Web/sites",
-      "apiVersion": "2015-04-01",
+      "apiVersion": "2015-08-01",
  
       "name": "[parameters('siteName')]",
       "location": "[resourceGroup().location]",
@@ -174,7 +174,7 @@
           "tags": {
             "displayName": "APIAppExtension"
           },
-          "apiVersion": "2015-04-01",
+          "apiVersion": "2015-08-01",
           "name": "[variables('$packageId')]",
           "dependsOn": [
  
@@ -187,7 +187,7 @@
         },
         {
           "type": "providers/links",
-          "apiVersion": "2015-01-01",
+          "apiVersion": "2015-08-01",
           "name": "Microsoft.Resources/apiApp",
           "dependsOn": [
             "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
@@ -198,7 +198,7 @@
         },
  
         {
-          "apiVersion": "2015-04-01",
+          "apiVersion": "2015-08-01",
           "name": "web",
           "type": "sourcecontrols",
           "dependsOn": [
@@ -250,7 +250,7 @@
       "resources": [
         {
           "type": "providers/links",
-          "apiVersion": "2015-01-01",
+          "apiVersion": "2015-03-01-preview"
           "name": "Microsoft.Resources/apiAppSite",
           "dependsOn": [
             "[resourceId('Microsoft.AppService/apiapps', parameters('apiAppName'))]"
