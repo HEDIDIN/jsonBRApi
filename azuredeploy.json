@@ -250,7 +250,7 @@
       "resources": [
         {
           "type": "providers/links",
-          "apiVersion": "2015-03-01-preview"
+          "apiVersion": "2015-03-01-preview",
           "name": "Microsoft.Resources/apiAppSite",
           "dependsOn": [
             "[resourceId('Microsoft.AppService/apiapps', parameters('apiAppName'))]"
