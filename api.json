@@ -9,7 +9,7 @@
       "email": "hedidin@edidingroup.net"      
     }   
   },
-  "host": "localhost:1337",
+  "host": "swagger project edit",
   "schemes": [
     "http",
     "https"
